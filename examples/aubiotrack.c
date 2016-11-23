@@ -43,6 +43,8 @@ void process_block(fvec_t * ibuf, fvec_t *obuf) {
     aubio_wavetable_play ( wavetable );
     /* send a midi tap (default to C0) out to the midi output */
     if (usejack) send_noteon(miditap_note, miditap_velo);
+    print_time (aubio_tempo_get_last (tempo));
+    outmsg ("\n");
   } else {
     aubio_wavetable_stop ( wavetable );
   }
